@@ -63,6 +63,5 @@ namespace WebApplicationTask15.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
     }
 }
