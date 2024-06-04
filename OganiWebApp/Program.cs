@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using OganiWebApp.Models.Contexts;
+
 namespace OganiWebApp
 {
     public class Program
@@ -7,6 +10,9 @@ namespace OganiWebApp
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<DataContext>(cfg => {
+                cfg.UseSqlServer(builder.Configuration.GetConnectionString("cString")); 
+            });
 
             var app = builder.Build();
             app.UseStaticFiles();
