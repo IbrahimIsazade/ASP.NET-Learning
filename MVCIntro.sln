@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationTask15", "WebApplicationTask15\WebApplicationTask15.csproj", "{022E8B7B-E4FB-4BAC-95DD-16EB09280D00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationTask15", "WebApplicationTask15\WebApplicationTask15.csproj", "{022E8B7B-E4FB-4BAC-95DD-16EB09280D00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OganiWebApp", "OganiWebApp\OganiWebApp.csproj", "{7B87DE51-A5C7-48FB-A3E9-4B852AEA5ACB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{022E8B7B-E4FB-4BAC-95DD-16EB09280D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{022E8B7B-E4FB-4BAC-95DD-16EB09280D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{022E8B7B-E4FB-4BAC-95DD-16EB09280D00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B87DE51-A5C7-48FB-A3E9-4B852AEA5ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B87DE51-A5C7-48FB-A3E9-4B852AEA5ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B87DE51-A5C7-48FB-A3E9-4B852AEA5ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B87DE51-A5C7-48FB-A3E9-4B852AEA5ACB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
