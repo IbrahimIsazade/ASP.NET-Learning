@@ -13,5 +13,15 @@ namespace OganiWebApp.Controllers
         {
             return View();
         }
+
+        public IActionResult Basket()
+        {
+            return View();
+        }
+
+        public IActionResult Checkout()
+        {
+            return View();
+        }
     }
 }
