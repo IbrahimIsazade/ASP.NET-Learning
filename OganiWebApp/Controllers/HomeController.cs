@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using OganiWebApp.Models.Contexts;
 using OganiWebApp.Models.Entities;
+using System.Diagnostics;
 
 namespace OganiWebApp.Controllers
 {
@@ -16,24 +19,6 @@ namespace OganiWebApp.Controllers
         public IActionResult Index()
         {
             return View();
-        }
-
-        [HttpPost]
-        public IActionResult Index(string email)
-        {
-            var subscriber = new Subscriber
-            {
-                Email = email
-            };
-
-            db.Subscribers.Add(subscriber);
-            db.SaveChanges();
-
-            return Json(new
-            {
-                error = false,
-                message = "Abune Oldunuz"
-            });
         }
 
         public IActionResult Contact()
@@ -57,6 +42,35 @@ namespace OganiWebApp.Controllers
             return Json( new { 
                 error=false,
                 message="5 is gunu erzinde size cavab edeceyik" 
+            });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Subscribe(string email)
+        {
+            var person = await db.Subscribers.FirstOrDefaultAsync(u => u.Email == email);
+
+            if (person is not null)
+            {
+                return Json(new
+                {
+                    error = true,
+                    message = "Artiq abune olmusunuz"
+                });
+            }
+
+            var subscriber = new Subscriber
+            {
+                Email = email
+            };
+
+            db.Subscribers.Add(subscriber);
+            db.SaveChanges();
+
+            return Json(new
+            {
+                error = false,
+                message = "Abune Oldunuz"
             });
         }
     }
